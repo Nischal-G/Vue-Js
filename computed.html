@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computed Properties</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+		<div id="app">
+			<button v-on:click="increment">Increment</button>
+			<p>Clicks : {{ clicks }}</p>
+			<p>Counter : {{ counter }}</p>
+		</div>
+
+		<script type="text/javascript">
+			new Vue({
+
+				el: '#app',
+
+				data:{
+					counter: 0,
+					clicks: 0
+				},
+
+				methods: {
+					increment() {
+						this.clicks++;
+					}
+				},
+
+				computed: {
+					counter(){
+						return this.clicks *2 ;
+					}
+				}
+
+			});
+		</script>
+		
+</body>
+</html>

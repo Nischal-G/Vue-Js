@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Components</title>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style type="text/css">
+    	.user{
+    		display: block;
+    		background-color: skyblue;
+    		width: 200px;
+    	}
+    </style>
+	
+</head>
+<body>
+
+	<div id="app">
+		<p>{{ title }}</p>
+		<hr>
+		<app-user></app-user>
+		<app-user></app-user>
+	</div>
+
+</body>
+
+<script src="https://unpkg.com/vue@2.5.11/dist/vue.js"></script>
+
+<script type="text/javascript">
+
+Vue.component('app-user',{
+	data: function(){
+		return {
+			users: [
+			{username: 'Ram'},
+			{username: 'Shyam'},
+			{username: 'Hari'}
+		]
+		}
+	},
+
+	template: '<div><div class="user" v-for="user in users"><p>UserName : {{ user.username }}</p></div></div>'
+})
+
+new Vue({
+	el: '#app',
+
+	data: {
+		title: 'Hello World! ',
+		
+	}
+});
+
+</script>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="demo">{{ fullName }}</div>	
+	<script type="text/javascript">
+	
+
+		var vm = new Vue({
+		  el: '#demo',
+		  data: {
+		    firstName: 'ram',
+		    lastName: 'hari'
+		  },
+		 computed: {
+		  fullName: {
+		    // getter
+		    get: function () {
+		      return this.firstName + ' ' + this.lastName
+		    },
+		    // setter
+		    set: function (newValue) {
+		      var names = newValue.split(' ')
+		      this.firstName = names[0]
+		      this.lastName = names[names.length - 1]
+		    }
+		  }
+		}
+		})
+
+		
+	</script>
+
+
+</body>
+</html>

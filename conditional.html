@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Conditional and Lists</title>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	
+</head>
+<body>
+
+	<div id="app">
+		<button v-on:click="show= !show">Show / Hide</button>
+		<p v-if="show">I m a part dat is visible</p>
+		<p v-else>Am i visible ?</p>
+		<hr>
+		<ul>
+			<li v-for="(person, index) in persons">{{ person.name }} - {{ index }}</li>
+		</ul>
+	</div>
+
+</body>
+
+<script src="https://unpkg.com/vue@2.5.11/dist/vue.js"></script>
+
+<script type="text/javascript">
+	new Vue({
+		el: '#app',
+
+		data:{
+			show:true,
+
+			persons: [
+				{name: 'Nischal', age: '22'},
+				{name: 'Shyam' , age: '25'},
+				{name: 'Bishwo' , age: '30'}
+			]
+		}
+	});
+</script>
+
+</html>
